@@ -1,5 +1,17 @@
 #include <iostream>
 #include "../include/gameIO.hpp"
+#include <array>
+
+void printGameBoard(char* round)
+{
+    std::cout << "+ - + - + - +" << '\n';
+    std::cout << "| " << round[0] << " | " << round[1] << " | " << round[2] << " |" << '\n';
+    std::cout << "+ - + - + - +" << '\n';
+    std::cout << "| " << round[3] << " | " << round[4] << " | " << round[5] << " |" << '\n';
+    std::cout << "+ - + - + - +" << '\n';
+    std::cout << "| " << round[6] << " | " << round[7] << " | " << round[8] << " |" << '\n';
+    std::cout << "+ - + - + - +" << '\n';
+}
 
 int setPlayerOrderInput()
 {
