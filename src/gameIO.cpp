@@ -37,3 +37,8 @@ int setPlayPositionInput(char player)
 
     return option;
 }
+
+void printWinner(char player)
+{
+    std::cout << "O jogador (" << player << ") venceu!" << '\n';
+}

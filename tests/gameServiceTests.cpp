@@ -75,3 +75,66 @@ TEST(SetPlayPositionService, shouldReturnInvalidArgumentException)
         EXPECT_EQ(e.what(), std::string("Opção inválida. Posição já  ocupada."));
     }
 }
+
+TEST(CheckForAWinner, ShouldReturnFalse)
+{
+    char round[9] { 'x', 'x', 'o', '4', '5', '6', '7', '8', '9' };
+
+    EXPECT_EQ(checkForAWinner(round), false);
+}
+
+TEST(CheckForAWinner, ShouldReturnTrueIn036)
+{
+    char round[9] { 'x', '2', '3', 'x', '5', '6', 'x', '8', '9' };
+
+    EXPECT_EQ(checkForAWinner(round), true);
+}
+
+TEST(CheckForAWinner, ShouldReturnTrueIn048)
+{
+    char round[9] { 'x', '2', '3', '4', 'x', '6', '7', '8', 'x' };
+
+    EXPECT_EQ(checkForAWinner(round), true);
+}
+
+TEST(CheckForAWinner, ShouldReturnTrueIn012)
+{
+    char round[9] { 'x', 'x', 'x', '4', '5', '6', '7', '8', '9' };
+
+    EXPECT_EQ(checkForAWinner(round), true);
+}
+
+TEST(CheckForAWinner, ShouldReturnTrueIn147)
+{
+    char round[9] { '1', 'x', '3', '4', 'x', '6', '7', 'x', '9' };
+
+    EXPECT_EQ(checkForAWinner(round), true);
+}
+
+TEST(CheckForAWinner, ShouldReturnTrueIn246)
+{
+    char round[9] { '1', '2', 'x', '4', 'x', '6', 'x', '8', '9' };
+
+    EXPECT_EQ(checkForAWinner(round), true);
+}
+
+TEST(CheckForAWinner, ShouldReturnTrueIn258)
+{
+    char round[9] { '1', '2', 'x', '4', '5', 'x', '7', '8', 'x' };
+
+    EXPECT_EQ(checkForAWinner(round), true);
+}
+
+TEST(CheckForAWinner, ShouldReturnTrueIn345)
+{
+    char round[9] { '1', '2', '3', 'x', 'x', 'x', '7', '8', '9' };
+
+    EXPECT_EQ(checkForAWinner(round), true);
+}
+
+TEST(CheckForAWinner, ShouldReturnTrueIn678)
+{
+    char round[9] { '1', '2', '3', '4', '5', '6', 'x', 'x', 'x' };
+
+    EXPECT_EQ(checkForAWinner(round), true);
+}

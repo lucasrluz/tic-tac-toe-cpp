@@ -51,3 +51,21 @@ void setPlayPositionService(int position, char player, char* round)
     
     round[index] = player;
 }
+
+bool checkForAWinner(char* round)
+{
+    if (
+        (round[0] == round[3] && round[3] == round[6]) ||
+        (round[0] == round[4] && round[4] == round[8]) || 
+        (round[0] == round[1] && round[1] == round[2]) ||
+        (round[1] == round[4] && round[4] == round[7]) ||
+        (round[2] == round[4] && round[4] == round[6]) || 
+        (round[2] == round[5] && round[5] == round[8]) ||
+        (round[3] == round[4] && round[4] == round[5]) ||
+        (round[6] == round[7] && round[7] == round[8]) 
+    ){
+        return true;
+    }
+    
+    return false;
+}

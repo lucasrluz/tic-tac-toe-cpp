@@ -4,5 +4,6 @@
 void printGameBoard(char* round);
 int setPlayerOrderInput();
 int setPlayPositionInput(char player);
+void printWinner(char player);
 
 #endif
