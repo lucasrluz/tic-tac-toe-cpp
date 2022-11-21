@@ -26,3 +26,14 @@ int setPlayerOrderInput()
 
     return option;
 }
+
+int setPlayPositionInput(char player)
+{
+    std::cout << "Em qual posição o jogador (" << player << ") quer jogar?" << '\n';
+
+    int option {};
+
+    std::cin >> option;
+
+    return option;
+}

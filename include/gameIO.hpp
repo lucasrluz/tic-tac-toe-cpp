@@ -3,5 +3,6 @@
 
 void printGameBoard(char* round);
 int setPlayerOrderInput();
+int setPlayPositionInput(char player);
 
 #endif
